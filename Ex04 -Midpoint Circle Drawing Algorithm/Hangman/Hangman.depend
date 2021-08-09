@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1628141293 source:c:\users\svish\desktop\graphics lab\ex04 -midpoint circle drawing algorithm\midpointcircle\main.cpp
+1628228410 source:c:\users\svish\desktop\graphics lab\ex04 -midpoint circle drawing algorithm\hangman\main.cpp
 	<windows.h>
 	<stdio.h>
 	<GL/glut.h>
