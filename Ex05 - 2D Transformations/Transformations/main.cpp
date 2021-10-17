@@ -224,8 +224,8 @@ public:
     Point getShearAboutYAxis(double shearParam, double xRefLine = 0){
         //For shearing about Y axis
 
-        double shearMatrix[3][3] = {{1, 0, -shearParam * xRefLine},
-                                    {shearParam, 1, 0},
+        double shearMatrix[3][3] = {{1, 0, 0},
+                                    {shearParam, 1, -shearParam * xRefLine},
                                     {0, 0, 1}};
 
         double values[3];

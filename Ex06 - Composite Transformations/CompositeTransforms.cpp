@@ -267,8 +267,8 @@ public:
                 
             
             case yAxis:{
-                double temp[3][3] = {   {1, 0, -shearParam * refConst},
-                                        {shearParam, 1, 0},
+                double temp[3][3] = {   {1, 0, 0},
+                                        {shearParam, 1, -shearParam * refConst},
                                         {0, 0, 1}};
                 
                 memcpy(shearMatrix, temp, sizeof(temp));
