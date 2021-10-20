@@ -1,0 +1,107 @@
+\documentclass[12pt, a4]{article}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{fullpage}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{color}
+
+%Syntax highlighting
+\definecolor{blue-violet}{rgb}{0.54, 0.17, 0.89}
+\definecolor{ao}{rgb}{0.0, 0.5, 0.0}
+\definecolor{amaranth}{rgb}{0.9, 0.17, 0.31}
+\definecolor{ballblue}{rgb}{0.13, 0.67, 0.8}
+\definecolor{onyx}{rgb}{0.06, 0.06, 0.06}
+
+
+\lstset{
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  breakatwhitespace=false,
+  keepspaces=true,
+  numbers=left,
+  numbersep=5pt,
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  tabsize=4,  
+  backgroundcolor=\color{white},   % choose the background color
+  commentstyle=\color{ao},    % comment style
+  keywordstyle=\color{amaranth},    % keyword style
+  stringstyle=\color{blue-violet},    % string literal style
+  numberstyle=\tiny\color{ballblue},	   % number style
+  basicstyle=\ttfamily\footnotesize\color{onyx} % size of fonts used for the code
+}
+
+%Document Header
+\title{\textbf{Department of CSE\\SSN College of Engineering}}
+\author{\textbf{Vishakan Subramanian - 18 5001 196 - Semester VII}}
+\date{20 October 2021}
+
+\begin{document}
+\maketitle
+\hrule
+\section*{\center{UCS 1712 - Graphics And Multimedia Lab}}
+\hrule
+\bigskip
+
+%Assignment Details
+\subsection*{\center{\textbf{Exercise 12: Creating A 2D Animation}}}
+\subsection*{\flushleft{Aim:}}
+\begin{flushleft}
+
+\begin{enumerate}
+
+\item Using GIMP, include layers and create a simple animation of your choice. 
+
+\end{enumerate}
+ 
+\end{flushleft}
+
+
+%Input
+\newpage
+\subsection*{\flushleft{Input: Frame-1}}
+\begin{figure}[h]
+\centering
+\caption{Frame-1.}
+\includegraphics[height=3cm, width=12cm]{Frame-1.png}
+\end{figure}
+
+\subsection*{\flushleft{Input: Frame-2}}
+\begin{figure}[h]
+\centering
+\caption{Frame-2.}
+\includegraphics[height=3cm, width=12cm]{Frame-2.png}
+\end{figure}
+
+\subsection*{\flushleft{Input: Frame-3}}
+\begin{figure}[h]
+\centering
+\caption{Frame-3.}
+\includegraphics[height=3cm, width=12cm]{Frame-3.png}
+\end{figure}
+
+%Output
+\newpage
+\subsection*{\flushleft{Output:}}
+\bigskip
+The frames were animated sequentially and exported as a \textbf{GIF} image, with each frame having a delay of 1000ms. The animation was viewed through a GIF Viewer.
+
+
+
+%Learning Outcome
+\subsection*{\flushleft{Learning Outcome:}}
+\begin{itemize}
+\item I learnt how to create an empty banner image using GIMP.
+\item I learnt how to implement a border around the image using another layer.
+\item I learnt how to type in custom text and color it using the Text tool.
+\item I learnt how to import an external image as a layer using GIMP.
+\item I understood how to calculate delays for each frame and implement it in GIMP.
+\item I learnt how to scale an object while maintaining its aspect ratio using the Scale tool.
+\item I learnt how to animate the frames using the Filters $\rightarrow$ Animate filter.
+\item I learnt how to loop the animation forever and optimize it for a GIF using GIMP.
+\end{itemize}
+
+
+\end{document}
