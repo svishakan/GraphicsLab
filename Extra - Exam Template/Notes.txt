@@ -177,7 +177,8 @@ Orthographic is used in drawing/analysing complex
 
 Full Forms:
 
-OpenGL - OpenGL Utility Toolkit
+OpenGL - Open Graphics Library
+GLUT - OpenGL Utility Toolkit
 GLEW - OpenGL Extension Wrangler
 GIMP - GNU Image Manipulation Program
 GNU - Gnu is Not Unix
