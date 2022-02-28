@@ -126,4 +126,15 @@ void miscFunctions(){
 
 	//Matrix copies
 	memcpy(source, dest, size(source));
+
+	//Writing text onto screen
+	unsigned char viewportString[] = "Hello";
+    
+    glutBitmapLength(GLUT_BITMAP_HELVETICA_18, viewportString);
+    
+    glRasterPos2d(240, 310);
+
+    for(int i = 0; i < strlen((const char *)viewportString); i++) {
+        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, viewportString[i]);
+    }
 }

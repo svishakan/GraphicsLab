@@ -1,0 +1,184 @@
+//DDA Algorithm:
+
+Input:	(x1, y1), (x2, y2)
+Output:	Line
+
+dx = x2 - x1
+dy = y2 - y1
+
+if(abs(dx) > abs(dy)):
+	slope_max = abs(dx)
+else:
+	slope_max = abs(dy)
+
+inc_x = dx/slope_max
+inc_y = dy/slope_max
+
+x, y = x1, y1
+
+for k in range(slope_max):
+	glVertex2i(x, y)
+	x += inc_x
+	y += inc_y
+
+
+
+//Bresenham Line Algorithm:
+
+Input:	(x1, y1), (x2, y2)
+Output:	Line
+
+dx = x2 - x1
+dy = y2 - y1
+
+sign_x = abs(dx) / dx
+sign_y = abs(dy) / dy
+
+inc_x = 1 * sign_x
+inc_y = 1 * sign_y
+
+x, y = x1, y1
+
+dx, dy = abs(dx), abs(dy)
+
+if(dx > dy):	//draw dx points
+	p = (2 * dy) - dx
+	inc_p1 = 2 * (dy - dx)
+	inc_p2 = 2 * dy
+
+	for i in range(dx):
+		glVertex2i(x, y)
+
+		if p >= 0:
+			y += inc_y
+			p += inc_p1
+		else:
+			p += inc_p2
+
+		x += inc_x
+
+else:			//draw dy points
+	p = (2 * dx) - dy
+	inc_p1 = 2 * (dx - dy)
+	inc_p2 = 2 * dx
+
+	for i in range(dy):
+		glVertex2i(x, y)
+
+		if p >= 0:
+			x += inc_x
+			p += inc_p1
+		else:
+			p += inc_p2
+
+		y += inc_y
+
+
+
+//Midpoint Circle Algorithm
+Input:	(xc, yc), radius
+Output:	Circle
+
+Point pt = (0, radius)
+p = 1 - radius
+
+while(pt.getX() < pt.getY()):
+	plotPoints(xc, yc, pt)
+
+	pt.incX()
+
+	if p < 0:
+		p += [2 * pt.getX()] + 1
+	else:
+		pt.decY()
+		p += 2 * [pt.getX() - pt.getY()] + 1
+
+
+def plotPoints(xc, yc, pt):
+	glVertex2d(xc + pt.getX(), yc + pt.getY())
+	glVertex2d(xc + pt.getY(), yc + pt.getX())
+	
+	glVertex2d(xc - pt.getX(), yc + pt.getY())
+	glVertex2d(xc - pt.getY(), yc + pt.getX())
+
+	glVertex2d(xc - pt.getX(), yc - pt.getY())
+	glVertex2d(xc - pt.getY(), yc - pt.getX())
+	
+	glVertex2d(xc + pt.getX(), yc - pt.getY())
+	glVertex2d(xc + pt.getY(), yc - pt.getX())
+
+
+
+//VIVA
+
+DDA v Bresenham
+
+DDA: Digital Differential Analyzer
+
+DDA is less efficient, more calculation intensive -
+uses float & rounding.
+Bresenham is more precise and fast, also simple.
+
+Uses: Drawing lines on pixel based displays and printers.
+
+
+Midpoint Circle
+
+Simple, easy, based on x^2 + y^2 = r^2.
+Accuracy is not very good, not suitable for complex images.
+
+Uses: Draw a circle on pixel based displays and printers.
+
+2D Transformations
+
+Shearing:	Transformation that changes shape of the object
+			Layers of the object slide on top the other.
+
+
+Uses: Convert Rectangle to Parallelogram?
+
+Composite Transformations
+
+Translation -> Rotation -> Scaling
+
+Order matters.
+
+Homogeneous coordinates make operations more simpler and symmetric. Affine transformations are possible.
+
+(Affine: preserves lines & parallelism)
+
+Window to Viewport Transformation
+
+Uses: Resizing a window, Connecting external monitor
+
+Window: Rectangular Area in World Coordinates
+Viewport: Display Area in Normalized Coordinates
+
+
+Line Clipping
+
+Uses: Removes lines outside the viewing pane.
+
+Liang-Barsky is faster because it uses parametric 
+form of the line and does the clipping in one go, 
+rather than region by region as in Cohen-Sutherland.
+
+
+Parallel v Perspective
+
+Orthographic/Parallel - 3D projected to 2D parallely
+Perspective	- 3D projected to 2D with converging lines
+
+Farther away object appears smaller in perspective -
+more realistic.
+
+Orthographic is used in drawing/analysing complex
+3D sketches/cut-away viewing of 3D objects
+
+Full Forms:
+
+OpenGL - OpenGL Utility Toolkit
+GLEW - OpenGL Extension Wrangler
+GIMP - GNU Image Manipulation Program
+GNU - Gnu is Not Unix
+
